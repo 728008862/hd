@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+  		<link rel="stylesheet" href="new_file.css" />
+  		<title></title>
+	</head>
+	<body>
+		<div class="box">
+			<div class="heade">
+				<div>
+					<img src="hd_03.png">
+					<select>
+						<option value="">北京</option>
+						<option value="">上海</option>
+						<option value="">深圳</option>
+					</select>	
+				</div>
+				<div>
+					<ul>
+						<li>好贷首页</li>
+						<li>消费贷款</li>
+					</ul>
+				</div>
+			</div>
+			<div class="quer">
+			<div class="sear">
+				<p class="dzb-y">快速搜索消费贷款</p>
+				<div class="dzb-e"><p>贷款金额</p><p>不足一万可用小数表示</p></div>
+			    <div class="dzb-s">
+			    	<input type="text" value="30" placeholder="万元"/>
+			    	<input type="button" value=""  class="but"/>
+			    	<ul>
+			    		<li>5万元</li>
+			    		<li>15万元</li>
+			    		<li>20万元</li>
+			    	</ul>
+			    </div>
+			    <p class="dzb-w">贷款期限</p>
+			    <div class="dzb-b">
+			    	<input type="text" value="18"  placeholder="个月"/>
+			    	<input type="button" value="" class="but"/>
+			    	<ul>
+			    		<li>5个月</li>
+			    		<li>6个月</li>
+			    		<li>7个月</li>
+			    	</ul></div>
+			    <input type="button" value="搜索一下" class="dzb-l"/>
+			    <p class="dzb-q">9164种信贷产品 2000家银行 1403家小贷公司</p>
+			</div>
+		</div>
+		</div>
+		
+	</body>
+	<script src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+	    $(".but").click(function(){
+	    	console.log($(this));
+	    	$(this).parent().find("ul").toggle();
+	    })
+		$("li").click(function(){
+			var a = $(this).text();
+			console.log(parseInt(a));
+            $(this).parent().parent().find("input[type='text']").val(parseInt(a));
+		    $(this).parent().toggle();
+		})
+	</script>
+</html>
